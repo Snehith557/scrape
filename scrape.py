@@ -61,4 +61,4 @@ schedule.every(30).minutes.do(find_price)
 while True:
     print("in the function")
     schedule.run_pending()
-    time.sleep(10)
+    time.sleep(1780)
