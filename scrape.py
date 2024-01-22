@@ -43,7 +43,7 @@ def send_email(price):
     message = MIMEMultipart()
     message['From'] = sender_email
     message['To'] = receiver_email
-    message['Subject'] = "Price Alert: Philips Trimmer"
+    message['Subject'] = "Price Alert: jbl earbuds"
 
     text_part = MIMEText("https://amzn.eu/d/6sd5Wfo")
     message.attach(text_part)
@@ -56,9 +56,9 @@ def send_email(price):
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, receiver_email, message.as_string())
 
-schedule.every(1).seconds.do(find_price)
+schedule.every(30).minutes.do(find_price)
 
 while True:
     print("in the function")
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(10)
