@@ -24,7 +24,7 @@ def find_price():
         price_str = soup.find('div', {'class': '_30jeq3 _16Jk6d'}).string[1:]
         price = float(price_str.replace(',', ''))
 
-        if price == 899:
+        if price <= 1200:
             send_email(price)
         else:
             print(price)
